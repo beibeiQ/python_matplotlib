@@ -1,0 +1,19 @@
+import matplotlib.pyplot as plt
+import numpy as np
+
+real_names=['千与千寻','玩具总动员4','黑衣人：全球追缉']
+real_num1 = [7548,4013,1673]
+real_num2 = [5453,1840,1080]
+real_num3 = [4348,2345,1890]
+x = np.arange(len(real_names))
+plt.axis([-0.5,3,0,9000])
+width = 0.3
+plt.bar(x,real_num1,width=width,label="第一天")
+plt.bar([i+width for i in x],real_num2,width=width,label='第二天')
+plt.bar([i+2*width for i in x],real_num3,width=width,label="第三天")
+x_label = ['千与千寻','玩具总动员4','黑衣人：全球追缉']
+plt.xticks([i+width for i in x],x_label)
+plt.ylabel("票房数")
+plt.legend()
+plt.title("三个电影的三天票房统计")
+plt.show()
